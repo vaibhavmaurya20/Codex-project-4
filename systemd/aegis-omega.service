@@ -1,0 +1,13 @@
+[Unit]
+Description=AEGIS-OMEGA always-on autonomous runtime
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=%h/.aegis-omega/run-aegis.sh --goal "maintain autonomous operations"
+Restart=always
+RestartSec=10
+WorkingDirectory=%h
+
+[Install]
+WantedBy=default.target
